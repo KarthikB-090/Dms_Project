@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cta %}
+<section id="contact" class="card m-4 p-4">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-sm-6">
+            <div class="contact-detail-box">
+              <i class="far fa-envelope text-colored fa-3x"></i>
+              <h4>Get In Touch</h4>
+              <abbr title="Phone">P:</abbr> (9182115887)<br>
+              E: <a href="mailto:email@email.com" class="text-muted">bkarthik0304@gmail.com</a>
+            </div>
+          </div><!-- end col -->
+          {% endblock cta %}
+{% block content %}
+
+          <div class="col-sm-6">
+            <div class="contact-detail-box">
+              <i class="fa fa-map-marker fa-3x text-colored"></i>
+              <h4>Our Location</h4>
+
+              <address>
+              <br><h3>Vijayawada, earlier known as Bezawada, is the third largest city in Andhra Pradesh, India.</h3>
+            </address>
+            </div>
+          </div><!-- end col -->
+
+        </div>
+        <!-- end row -->
+
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1gG7XNhTsecbhpp2RhZ1FV9gBQew&ehbc=2E312F" width="540" height="480"></iframe>
+            </div>
+          </div><!-- end col -->
+
+          <!-- Contact form -->
+          <div class="col-sm-6">
+            <form role="form" name="ajax-form" id="ajax-form" method="post" class="form-main" action="{% url 'home' %}">
+            {% csrf_token %}
+              <div class="form-group">
+                <label for="name2">Name</label>
+                <input class="form-control" id="name2" name="name" type="text" placeholder="name">
+                <div class="error" id="err-name" style="display: none;">Please enter name</div>
+              </div> <!-- /Form-name -->
+
+              <div class="form-group">
+                <label for="email2">Email</label>
+                <input class="form-control" id="email2" name="email" type="text" placeholder="email">
+                <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div>
+              </div> <!-- /Form-email -->
+
+              <div class="form-group">
+                <label for="message2">Message</label>
+                <textarea class="form-control" id="message2" name="message" rows="5" placeholder="message">Message</textarea>
+
+                <div class="error" id="err-message" style="display: none;">Please enter message</div>
+              </div> <!-- /col -->
+
+              <div class="row">
+                  <button type="submit" class="btn btn-primary btn-shadow btn-rounded w-md" id="send">Send</button>
+                </div> <!-- /col -->
+          </div> <!-- /row -->
+            </form> <!-- /form -->
+          </div> <!-- end col -->
+
+        </div> <!-- end row -->
+
+      </div>
+</section>
+
+
+{% endblock content %}
